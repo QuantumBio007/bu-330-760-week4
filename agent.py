@@ -1,12 +1,16 @@
 """Math agent that solves questions using tools in a ReAct loop."""
 
+import os
+import certifi
+os.environ.setdefault("SSL_CERT_FILE", certifi.where())
+
 import json
 
 from dotenv import load_dotenv
 from pydantic_ai import Agent
 from calculator import calculate
 
-load_dotenv()
+load_dotenv(override=True)
 
 # Configure your model below. Examples:
 #   "google-gla:gemini-2.5-flash"       (needs GOOGLE_API_KEY)
